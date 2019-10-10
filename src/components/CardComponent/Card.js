@@ -12,7 +12,7 @@ const MyCard = (props) => {
 
   return (
     <div className="my-card">
-      <Card style={{width:500}}>
+      <Card style={{width:400}}>
           <CardImg top width="318px" height="300px" src={props.hdurl} alt="Card image cap" />
 
         <CardBody>
