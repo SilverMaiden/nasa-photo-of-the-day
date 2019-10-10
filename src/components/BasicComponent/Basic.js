@@ -35,7 +35,7 @@ export default class Basic extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="https://github.com/SilverMaiden/https://github.com/SilverMaiden/nasa-photo-of-the-day">GitHub</NavLink>
+                <NavLink href="https://github.com/SilverMaiden/nasa-photo-of-the-day" target='_blank'>GitHub</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
