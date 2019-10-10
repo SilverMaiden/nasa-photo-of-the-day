@@ -8,25 +8,25 @@ import {
 
 const MyCard = (props) => {
     const [myCollapse, setMyCollapse] = useState({collapse: true})
-    const [buttonText, setButtonText] = useState("Read More");
+    const [buttonText, setButtonText] = useState("Read More...");
 
   return (
     <div className="my-card">
-      <Card style={{width:400}}>
-          <CardImg top width="318px" height="180px" src={props.hdurl} alt="Card image cap" />
+      <Card style={{width:500}}>
+          <CardImg top width="318px" height="300px" src={props.hdurl} alt="Card image cap" />
 
         <CardBody>
-          <CardTitle>Card title</CardTitle>
+          <CardTitle>{props.title}</CardTitle>
           <CardSubtitle>{props.sub}</CardSubtitle>
 
           <Collapse isOpen={!myCollapse}>
-              <CardText style={{marginBottom:50}}>{props.exp}</CardText>
+              <CardText style={{marginBottom:10}}>{props.exp}</CardText>
           </Collapse>
         <Button onClick={() => {
             if (myCollapse) {
                 setButtonText("Close")
             } else {
-                setButtonText("Read More")
+                setButtonText("Read More...")
             }
             setMyCollapse(!myCollapse);
           }}>{buttonText}</Button>
