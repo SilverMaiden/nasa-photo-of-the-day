@@ -17,10 +17,10 @@ const MyCard = (props) => {
 
         <CardBody>
           <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardSubtitle>{props.sub}</CardSubtitle>
 
           <Collapse isOpen={!myCollapse}>
-              <CardText style={{marginBottom:10}}>{props.exp}</CardText>
+              <CardText style={{marginBottom:50}}>{props.exp}</CardText>
           </Collapse>
         <Button onClick={() => {
             if (myCollapse) {

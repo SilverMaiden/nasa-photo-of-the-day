@@ -3,6 +3,7 @@ import Basic from "./components/BasicComponent/Basic";
 import MyDate from "./components/DateComponent/MyDate";
 import "./App.css";
 import axios from 'axios';
+import { Button } from 'reactstrap';
 function App() {
 
     const [c1_date, setCollection1_date] = useState("");
@@ -34,10 +35,9 @@ function App() {
 
         var date1 = new Date();
         let currentDate = new Date();
-        console.log(date1);
 
         let daysIndex = 5;
-        for (let i=0; i<=daysIndex; i++) {
+        for (let i=1; i<=daysIndex; i++) {
             currentDate.setDate(date1.getDate() - i);
             dates.push(currentDate.toISOString().substring(0,10));
         }
@@ -91,20 +91,9 @@ function App() {
 
                     })
                 })
-                .then(() => {
-                    axios.get(`https://api.nasa.gov/planetary/apod?api_key=Ir7SyGtDLq9RSTew4VCcTL3eHxoyuLJcEZ8ojl3K&date=${dates[5]}`)
-                    .then(response => {
-                        setCollection6_hdurl(response.data.hdurl);
-                        setCollection6_date(response.data.date);
-                        setCollection6_exp(response.data.explanation);
-
-                    })
-                })
 
 
-
-
-       }, []);
+       });
 
 
   return (
@@ -130,11 +119,6 @@ function App() {
                 c5_date = {c5_date}
                 c5_hdurl = {c5_hdurl}
                 c5_exp = {c5_exp}
-
-                c6_date = {c6_date}
-                c6_hdurl = {c6_hdurl}
-                c6_exp = {c6_exp}
-
             />
     </div>
   );
